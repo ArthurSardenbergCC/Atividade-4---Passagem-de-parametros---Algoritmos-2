@@ -1,0 +1,64 @@
+Exercícios da atividade 4 - Capítulo sobre passagem de parâmetros por valor e referência - páginas 32 a 34
+
+Letra A
+
+1)
+Linha 2: Os valores mostrados serão 1, 2 e 3. A primeira instrução "cout", pela sua localização, realiza a impressão dos argumentos passados pela chamada da linha 11 sem qualquer modificação.
+
+Linha 6: Os valores mostrados serão 101, 102 e 103. A segunda instrução "cout" imprime esses valores devido a três linhas de processamento (linhas 3-5) anteriores a ela, as quais somam 100 unidades a cada variável.
+
+Linha 12: Os valores mostrados serão 1, 2 e 3. Como os valores das variáveis da função principal não foram alterados após a chamada da função, a terceira instrução "cout" será idêntica à primeira.
+
+
+2)
+Linha 2: Os valores exibidos são 1, 2 e 3. O primeiro comando "cout" exibe esses valores, pois ele imprime os valores que foram inicializados com cada variável através da passagem do endereço das variáveis na chamada da linha 11 e o uso do operador de indireção.
+
+Linha 6: Os valores exibidos são 101, 102 e 103. O segundo comando "cout" exibe esses valores, porque os valores sofreram processamentos nas linhas 3 a 5, com cada variável tendo 100 unidades somada ao seu valor original.
+
+Linha 12: Os valores exibidos são 101, 102 e 103. O terceiro comando "cout" exibe esses valores devido à execução dessa instrução ocorrer após a chamada da função, a qual, por meio de ponteiros, altera o valor original de cada variável segundo os processamentos realizados no decorrer da função.
+
+
+3)
+Linha 7: Os valores exibidos são 0 e 5. O primeiro comando "cout" mostra esses valores, pois nenhum processamento foi feito sobre os valores inicias das variáveis.
+
+Linha 9: Os valores exibidos são 5 e 5. O segundo comando "cout" mostra esses valores, porque o processamento feito no decorrer da função consiste em atribuir à variável para a qual o ponteiro aponta (variável "a") o valor de variável "b". Como o argumento de "a" passado para a função ocorreu por referência, o valor dessa variável é alterado também na função principal.   
+
+
+4)
+Linha 11: Os valores exibidos são 2, 4 e 6. O primeiro comando "cout" exibe esses valores, pois nenhuma das variáveis sofreu modificação antes dessa instrução ser executada.
+
+Linha 13: Os valores exibidos são 2, 4 e 6. O segundo comando "cout" exibe esses valores, porque a chamada da função "por_valor" não modificou os valores das variáveis já que a passagem de parâmetros por valor não modifica valores da função principal. 
+
+Linha 14: Os valores exibidos são 2, 4 e 6. O terceiro comando "cout" exibe esses valores devido à execução dessa instrução ocorrer logo após a linha 13, sem a execução de qualquer tipo de processamento.
+
+Linha 16: Os valores exibidos são 0, 0 e 0. O quarto comando "cout" exibe esses valores, pois a chamada da função "por_ref" utiliza a passagem de parâmetros por referência, modificando os valores de cada variável na função principal. Como o processamento da função consiste em substituir todos os valores para os quais os ponteiros apontam por 0, a impressão das variáveis será "0 0 0".
+
+
+5)
+Linha 3: O valor exibido será 11. O primeiro comando "cout" exibe esse valor, pois o valor para o qual o ponteiro da função "incrementar" aponta é modicado pelo processamento da linha 2.
+
+Linha 9: O valor exibido será 11. O segundo comando "cout" exibe esse valor, porque a função "incrementar" foi executada como uma passagem de parâmetros por referência, alterando o valor da variável "i" na função conforme o processamento realizado na linha 2.
+
+
+6)
+Linha 4: O valor exibido será 8. O primeiro comando "cout" exibe esse valor, pois o ponteiro "a" passou a apontar para o endereço de "x" na chamada da função e o processamento da linha 2 modificou o conteúdo de "*a" para 8.
+
+Linha 5: O valor exibido será 7. O segundo comando "cout" mostra esse valor, porque o parâmetro "b" recebeu o valor "2" na chamada da função e o processamento da linha 3 modificou seu conteúdo para 7.
+
+Linha 11: O valor exibido será 8. O terceiro comando "cout" apresenta esse valor, pois a variável "x" foi modificada pelo processamento feito com o ponteiro "a" com o operador de indireção "*" na linha 2.
+
+Linha 12: O valor exibido será 2. O quarto comando "cout" exibe esse valor, porque o processamento feito durante a chamada da função "calc" não alterou o valor da variável "y". Isso é consequência de uma passagem de parâmetro por valor e também da função utilizada ser sem retorno (void).
+
+
+7)
+
+Os valores resultantes na linha 12 dependerão dos valores de entrada de "a" e "b" na linha 9. Se "a" for maior que "b", o valor de "s" será 0 devido à condição da linha 10 ser falsa. Do contrário, a função "soma" é chamada e o valores de "s" dependerá da diferença entre "a" e "b", pois até que "i" ultrapasse o valor de "y", o loop da linha 4 continuará.
+
+Se "a" for 3 e "b" for 5, ocorrerá três iterações na linha 4 e o valor de "s" será 12.
+
+Comentário extra: O operador de endereço "&" é necessário no C, pois a instrução "scanf" precisa dos endereços das variáveis para conseguir atribuir valores às variáveis.
+
+
+Letra B
+
+Sim, pois o ponteiro "pz" foi declarado como um ponteiro do tipo "float" e aponta para a variável "z" do tipo float e, portanto, pode receber valores via instruções de entrada desse tipo primitivo (nesse caso um "scanf" do tipo float "%f").
